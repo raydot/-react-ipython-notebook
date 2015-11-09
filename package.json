@@ -1,0 +1,45 @@
+{
+  "name": "react-ipython-notebook",
+  "version": "0.1.0",
+  "description": "A React component for read-only iPython Notebooks",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "test": "standard && mocha --compilers js:babel/register test/*.js",
+    "watch-test": "mocha -wG --compilers js:babel/register test/*.js",
+    "notify-lint": "output=$(./node_modules/.bin/standard) || (echo \"$output\"; notif=`echo $output |grep '\\/.*:[0-9]*:[0-9]*:' |sed -E -e \"s/.*\\/([^\\/]*\\/[^\\/]*):([0-9]*):[0-9]*:/\\1:\\2/g\"`; osascript -e 'on run argv' -e 'display notification (item 1 of argv) with title \"StandardJS\"' -e 'end run' \"$notif\" 1&>/dev/null; echo $notif)",
+    "watch-lint": "nodemon --exec \"npm run notify-lint\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/plotly/react-ipython-notebook.git"
+  },
+  "keywords": [
+    "python",
+    "ipython",
+    "notebook",
+    "ipynb",
+    "react"
+  ],
+  "author": "Ricky Reusser",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/plotly/react-ipython-notebook/issues"
+  },
+  "homepage": "https://github.com/plotly/react-ipython-notebook#readme",
+  "devDependencies": {
+    "babel-eslint": "^4.1.4",
+    "chai": "^3.4.1",
+    "mocha": "^2.3.3",
+    "react": "^0.14.2",
+    "react-addons-test-utils": "^0.14.2",
+    "standard": "^5.3.1"
+  },
+  "standard": {
+    "parser": "babel-eslint"
+  },
+  "dependencies": {
+    "react-remarkable": "^1.1.1",
+    "remarkable": "^1.6.0"
+  }
+}
