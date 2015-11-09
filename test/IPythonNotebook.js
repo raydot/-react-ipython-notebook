@@ -4,8 +4,8 @@
 
 import React from 'react'
 import { assert } from 'chai'
-import IPythonNotebook from '../index'
 import { render } from './util'
+import IPythonNotebook from '../index'
 
 import sampleNotebook from './fixtures/notebook1.ipynb'
 
@@ -17,7 +17,7 @@ describe('IPythonNotebook', () => {
   })
 
   it('generates a notebook component', () => {
-    assert.equal(output.type, IPythonNotebook)
+    assert.equal(output.type, <div/>.type)
   })
 
   it('has the correct number of cells', () => {
