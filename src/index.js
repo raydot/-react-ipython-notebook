@@ -4,6 +4,7 @@ var React = require('react')
 var MarkdownCell = require('./cells/markdown')
 var CodeCell = require('./cells/code')
 var RawCell = require('./cells/raw')
+var ErrorCell = require('./cells/error')
 
 function renderCell (cell, i) {
   var Cell = {
@@ -11,6 +12,12 @@ function renderCell (cell, i) {
     code: CodeCell,
     raw: RawCell
   }[cell.cell_type]
+
+  if (! Cell) {
+    return (
+      <Error message={`Unknown cell type ${cell.cell_type}`}/>
+    )
+  }
 
   return (
     <Cell
