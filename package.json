@@ -19,7 +19,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/plotly/react-ipython-notebook.git"
+    "url": "https://github.com/plotly/react-ipython-notebook"
   },
   "keywords": [
     "python",
