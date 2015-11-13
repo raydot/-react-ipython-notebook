@@ -29118,6 +29118,17 @@ return Autolinker;
 },{}],219:[function(require,module,exports){
 'use strict';
 
+var React = require('react');
+
+var CodeCell = function CodeCell(props) {
+  return React.createElement('div', { className: 'ipynbCell--code' });
+};
+
+module.exports = CodeCell;
+
+},{"react":157}],220:[function(require,module,exports){
+'use strict';
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -29130,61 +29141,22 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = _ipythonNotebook2.default;
 
-},{"./ipython-notebook.js":223}],220:[function(require,module,exports){
+},{"./ipython-notebook.js":221}],221:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
-
-var IPythonNotebookCodeCell = function IPythonNotebookCodeCell(props) {
-  return React.createElement('div', { className: 'ipynbCell--code' });
-};
-
-module.exports = IPythonNotebookCodeCell;
-
-},{"react":157}],221:[function(require,module,exports){
-'use strict';
-
-var React = require('react');
-var Remarkable = require('remarkable');
-
-var md = new Remarkable();
-
-var IPythonNotebookMarkdownCell = function IPythonNotebookMarkdownCell(props) {
-  return React.createElement('div', {
-    className: 'ipynbCell--text',
-    dangerouslySetInnerHTML: { __html: md.render(props.data.source.join('')) }
-  });
-};
-
-module.exports = IPythonNotebookMarkdownCell;
-
-},{"react":157,"remarkable":158}],222:[function(require,module,exports){
-'use strict';
-
-var React = require('react');
-
-var IPythonNotebookRawCell = function IPythonNotebookRawCell(props) {
-  return React.createElement('div', { className: 'ipynbCell--raw' });
-};
-
-module.exports = IPythonNotebookRawCell;
-
-},{"react":157}],223:[function(require,module,exports){
-'use strict';
-
-var React = require('react');
-var IPythonNotebookMarkdownCell = require('./ipython-notebook-markdown-cell');
-var IPythonNotebookCodeCell = require('./ipython-notebook-code-cell');
-var IPythonNotebookRawCell = require('./ipython-notebook-raw-cell');
+var MarkdownCell = require('./markdown-cell');
+var CodeCell = require('./code-cell');
+var RawCell = require('./raw-cell');
 
 function renderCell(cell, i) {
-  var IPythonNotebookCell = ({
-    markdown: IPythonNotebookMarkdownCell,
-    code: IPythonNotebookCodeCell,
-    raw: IPythonNotebookRawCell
+  var Cell = ({
+    markdown: MarkdownCell,
+    code: CodeCell,
+    raw: RawCell
   })[cell.cell_type];
 
-  return React.createElement(IPythonNotebookCell, {
+  return React.createElement(Cell, {
     data: cell,
     key: 'ipnyb-cell-' + (i + 1)
   });
@@ -29200,4 +29172,32 @@ var IPythonNotebook = function IPythonNotebook(props) {
 
 module.exports = IPythonNotebook;
 
-},{"./ipython-notebook-code-cell":220,"./ipython-notebook-markdown-cell":221,"./ipython-notebook-raw-cell":222,"react":157}]},{},[219]);
+},{"./code-cell":219,"./markdown-cell":222,"./raw-cell":223,"react":157}],222:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+var Remarkable = require('remarkable');
+
+var md = new Remarkable();
+
+var MarkdownCell = function MarkdownCell(props) {
+  return React.createElement('div', {
+    className: 'ipynbCell--text',
+    dangerouslySetInnerHTML: { __html: md.render(props.data.source.join('')) }
+  });
+};
+
+module.exports = MarkdownCell;
+
+},{"react":157,"remarkable":158}],223:[function(require,module,exports){
+'use strict';
+
+var React = require('react');
+
+var RawCell = function RawCell(props) {
+  return React.createElement('div', { className: 'ipynbCell--raw' });
+};
+
+module.exports = RawCell;
+
+},{"react":157}]},{},[220]);

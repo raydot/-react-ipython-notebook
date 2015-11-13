@@ -5,15 +5,15 @@
 import React from 'react'
 import { assert } from 'chai'
 import { render } from './util'
-import IPythonNotebookMarkdownCell from '../src/ipython-notebook-markdown-cell'
+import MarkdownCell from '../src/markdown-cell'
 
 import mdcell from './fixtures/cells/markdown'
 
-describe('IPythonNotebookMarkdownCell', () => {
+describe('MarkdownCell', () => {
   var output
 
   beforeEach(() => {
-    output = render(<IPythonNotebookMarkdownCell data={mdcell}/>)
+    output = render(<MarkdownCell data={mdcell}/>)
   })
 
   it('generates a div', () => {

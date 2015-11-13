@@ -2,9 +2,9 @@
 
 var React = require('react')
 
-var IPythonNotebookCodeCell = (props) => (
+var CodeCell = (props) => (
   <div className='ipynbCell--code'>
   </div>
 )
 
-module.exports = IPythonNotebookCodeCell
+module.exports = CodeCell

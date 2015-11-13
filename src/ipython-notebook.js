@@ -1,19 +1,19 @@
 'use strict'
 
 var React = require('react')
-var IPythonNotebookMarkdownCell = require('./ipython-notebook-markdown-cell')
-var IPythonNotebookCodeCell = require('./ipython-notebook-code-cell')
-var IPythonNotebookRawCell = require('./ipython-notebook-raw-cell')
+var MarkdownCell = require('./markdown-cell')
+var CodeCell = require('./code-cell')
+var RawCell = require('./raw-cell')
 
 function renderCell (cell, i) {
-  var IPythonNotebookCell = {
-    markdown: IPythonNotebookMarkdownCell,
-    code: IPythonNotebookCodeCell,
-    raw: IPythonNotebookRawCell
+  var Cell = {
+    markdown: MarkdownCell,
+    code: CodeCell,
+    raw: RawCell
   }[cell.cell_type]
 
   return (
-    <IPythonNotebookCell
+    <Cell
       data={cell}
       key={`ipnyb-cell-${i + 1}`}
     />

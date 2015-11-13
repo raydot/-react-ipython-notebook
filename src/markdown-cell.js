@@ -5,11 +5,11 @@ var Remarkable = require('remarkable')
 
 var md = new Remarkable()
 
-var IPythonNotebookMarkdownCell = (props) => (
+var MarkdownCell = (props) => (
   <div
     className='ipynbCell--text'
     dangerouslySetInnerHTML={{__html: md.render(props.data.source.join(''))}}
   />
 )
 
-module.exports = IPythonNotebookMarkdownCell
+module.exports = MarkdownCell
