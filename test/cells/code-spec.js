@@ -4,10 +4,10 @@
 
 import React from 'react'
 import { assert } from 'chai'
-import { render } from './util'
-import CodeCell from '../src/code-cell'
+import { render } from '../util'
+import CodeCell from '../../src/cells/code'
 
-import mdcell from './fixtures/cells/code'
+import mdcell from '../fixtures/cells/code'
 
 describe('CodeCell', () => {
   var output

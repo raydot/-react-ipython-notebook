@@ -1,9 +1,9 @@
 'use strict'
 
 var React = require('react')
-var MarkdownCell = require('./markdown-cell')
-var CodeCell = require('./code-cell')
-var RawCell = require('./raw-cell')
+var MarkdownCell = require('./cells/markdown')
+var CodeCell = require('./cells/code')
+var RawCell = require('./cells/raw')
 
 function renderCell (cell, i) {
   var Cell = {
@@ -21,9 +21,7 @@ function renderCell (cell, i) {
 }
 
 var IPythonNotebook = (props) => (
-  <div className='ipynb'>
-    { props.data.cells.map(renderCell) }
-  </div>
+  <div className='ipynb'>{props.data.cells.map(renderCell)}</div>
 )
 
 module.exports = IPythonNotebook

@@ -4,9 +4,9 @@
   "description": "A React component for read-only iPython Notebooks",
   "main": "dist/index.js",
   "scripts": {
-    "lint": "standard src/* test/*",
-    "test": "npm run lint && mocha --compilers js:babel/register test/*-spec.js",
-    "watch-test": "mocha -wG --compilers js:babel/register test/*-spec.js",
+    "lint": "standard src/*.js src/**/*.js test/*.js test/**/*.js",
+    "test": "npm run lint && mocha --compilers js:babel/register test/*-spec.js test/**/*-spec.js",
+    "watch-test": "mocha -wG --compilers js:babel/register test/*-spec.js test/**/*-spec.js",
     "watch-lint": "nodemon --exec \"npm run lint\"",
     "notify-lint": "./scripts/notify-lint.sh",
     "watch-notify-lint": "nodemon --exec \"npm run notify-lint\"",
