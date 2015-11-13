@@ -25,7 +25,7 @@ describe('OutputPrompt', () => {
     assert.match(output.props.children, /Out \[42\]:/)
   })
 
-  it('no number yields "Out [ ]:', () => {
+  it('no number yields "Out [ ]:"', () => {
     output = render(<OutputPrompt/>)
     assert.match(output.props.children, /Out \[ \]:/)
   })

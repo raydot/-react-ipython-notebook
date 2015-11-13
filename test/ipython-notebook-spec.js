@@ -5,7 +5,7 @@
 import React from 'react'
 import { assert } from 'chai'
 import { render } from './util'
-import IPythonNotebook from '../src/index'
+import IPythonNotebook from '../src'
 
 import sampleNotebook from './fixtures/notebook1.ipynb'
 

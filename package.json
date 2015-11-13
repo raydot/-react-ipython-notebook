@@ -15,7 +15,8 @@
     "babel": "babel --presets es2015,react src/ --out-dir lib",
     "babel-bin": "babel --presets es2015,react bin/*.js --out-dir dist/",
     "build": "npm run bundle && npm run uglify && npm run babel && npm run babel-bin",
-    "server": "python -m SimpleHTTPServer"
+    "server": "python -m SimpleHTTPServer",
+    "clean": "rm -rf dist/* lib/*"
   },
   "repository": {
     "type": "git",
