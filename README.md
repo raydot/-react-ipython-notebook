@@ -7,10 +7,10 @@
 
 Incomplete and not fully functional. At the moment it just creates some basic cell markup and renders the markdown content. To see a simple example:
 
-```javascript
-npm install
-npm run build
-node dist/bin/nbconvert.js test/fixtures/notebook1.ipynb.json 
+```bash
+$ npm install
+$ npm run build
+$ node dist/bin/nbconvert.js test/fixtures/notebook1.ipynb.json 
 ```
 
 The output (beautified and with react tags removed) is:
@@ -47,3 +47,11 @@ The output (beautified and with react tags removed) is:
 - Separate nbconvert into separate repo (i.e. avoid unnecessary dependencies in this repo)
 - And more
 
+
+## Testing
+
+Tests are done with react [shallow rendering](https://facebook.github.io/react/docs/test-utils.html#shallow-rendering). Run with
+
+```bash
+$ npm run test
+```

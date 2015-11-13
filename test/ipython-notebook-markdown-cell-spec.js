@@ -20,12 +20,12 @@ describe('IPythonNotebookMarkdownCell', () => {
     assert.equal(output.type, <div/>.type)
   })
 
-  it('has class "ipynb__cell--text"', () => {
-    assert.match(output.props.className, /\bipynb__cell--text\b/)
+  it('has class "ipynbCell--text"', () => {
+    assert.match(output.props.className, /\bipynbCell--text\b/)
   })
 
   it('renders the markdown content', () => {
-    var expectedOutput = '<h1>test</h1>\n<p>$$y = x$$</p>\n'
-    assert.equal(output.props.dangerouslySetInnerHTML, expectedOutput)
+    var expectedOutput = {__html: '<h1>test</h1>\n<p>$$y = x$$</p>\n'}
+    assert.deepEqual(output.props.dangerouslySetInnerHTML, expectedOutput)
   })
 })
