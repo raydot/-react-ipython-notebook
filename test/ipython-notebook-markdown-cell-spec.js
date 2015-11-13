@@ -5,7 +5,7 @@
 import React from 'react'
 import { assert } from 'chai'
 import { render } from './util'
-import IPythonNotebookMarkdownCell from '../lib/IPythonNotebookMarkdownCell'
+import IPythonNotebookMarkdownCell from '../src/ipython-notebook-markdown-cell'
 
 import mdcell from './fixtures/cells/markdown'
 

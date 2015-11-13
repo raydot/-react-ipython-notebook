@@ -2,13 +2,20 @@
   "name": "react-ipython-notebook",
   "version": "0.1.0",
   "description": "A React component for read-only iPython Notebooks",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
-    "lint": "standard",
-    "test": "standard && mocha --compilers js:babel/register test/*.js",
-    "watch-test": "mocha -wG --compilers js:babel/register test/*.js",
-    "notify-lint": "output=$(./node_modules/.bin/standard) || (echo \"$output\"; notif=`echo $output |grep '\\/.*:[0-9]*:[0-9]*:' |sed -E -e \"s/.*\\/([^\\/]*\\/[^\\/]*):([0-9]*):[0-9]*:/\\1:\\2/g\"`; osascript -e 'on run argv' -e 'display notification (item 1 of argv) with title \"StandardJS\"' -e 'end run' \"$notif\" 1&>/dev/null; echo $notif)",
-    "watch-lint": "nodemon --exec \"npm run notify-lint\""
+    "lint": "standard src/* test/*",
+    "test": "npm run lint && mocha --compilers js:babel/register test/*-spec.js",
+    "watch-test": "mocha -wG --compilers js:babel/register test/*-spec.js",
+    "watch-lint": "nodemon --exec \"npm run lint\"",
+    "notify-lint": "./scripts/notify-lint.sh",
+    "watch-notify-lint": "nodemon --exec \"npm run notify-lint\"",
+    "bundle": "browserify -t [ babelify --presets [ react es2015 ] ] src/index.js -o dist/bundle.js",
+    "uglify": "uglifyjs  --compress --mangle -- dist/bundle.js > dist/bundle.min.js",
+    "babel": "babel --presets es2015,react src/ --out-dir lib",
+    "babel-bin": "babel --presets es2015,react bin/*.js --out-dir dist/",
+    "build": "npm run bundle && npm run uglify && npm run babel && npm run babel-bin",
+    "server": "python -m SimpleHTTPServer"
   },
   "repository": {
     "type": "git",
@@ -29,11 +36,18 @@
   "homepage": "https://github.com/plotly/react-ipython-notebook#readme",
   "devDependencies": {
     "babel-eslint": "^4.1.4",
+    "babel-plugin-react-transform": "^1.1.1",
+    "babel-preset-es2015": "^6.1.18",
+    "babel-preset-react": "^6.1.18",
+    "babelify": "^7.2.0",
+    "browserify": "^12.0.1",
     "chai": "^3.4.1",
     "mocha": "^2.3.3",
     "react": "^0.14.2",
     "react-addons-test-utils": "^0.14.2",
-    "standard": "^5.3.1"
+    "react-dom": "^0.14.2",
+    "standard": "^5.3.1",
+    "uglify-js": "^2.6.0"
   },
   "standard": {
     "parser": "babel-eslint"
