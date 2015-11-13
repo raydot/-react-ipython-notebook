@@ -6,8 +6,8 @@
 
 Rendering an iPython notebook should be reasonably simple: JSON in, html out. It could be pretty easily accomplished with a minimal templating library, but since React is a glorified templating library and opens the door to robust markdown/mathjax/editing/manipulation/etc., it seemed like a natural approach (absolutely open to critique/differing opinions on this). The goals are:
 
-1) A notebook component that can be dropped into an existing interface. It receives json and renders the notebook.
-2) A command line conversion untility that just uses ReactDOMServer.renderToString to create equivalent output as a command line utility.
+  1. A notebook component that can be dropped into an existing interface. It receives json and renders the notebook.
+  2. A command line conversion untility that just uses ReactDOMServer.renderToString to create equivalent output as a command line utility.
 
 ## Notes
 
