@@ -14,8 +14,10 @@
     "uglify": "uglifyjs  --compress --mangle -- dist/bundle.js > dist/bundle.min.js",
     "babel": "babel --presets es2015,react src/ --out-dir lib",
     "babel-bin": "babel --presets es2015,react bin/*.js --out-dir dist/",
-    "build": "npm run bundle && npm run uglify && npm run babel && npm run babel-bin",
-    "server": "python -m SimpleHTTPServer",
+    "build-example": "browserify -t [ babelify --presets [ react es2015 ] ] example/src/index.js -o example/bundle.js",
+    "build": "npm run bundle && npm run uglify && npm run babel && npm run babel-bin && npm run build-example",
+    "start": "python -m SimpleHTTPServer",
+    "sass": "./node_modules/.bin/node-sass example/style.scss > example/style.css",
     "clean": "rm -rf dist/* lib/*"
   },
   "repository": {
@@ -43,7 +45,10 @@
     "babelify": "^7.2.0",
     "browserify": "^12.0.1",
     "chai": "^3.4.1",
+    "mdast": "^2.1.0",
+    "mdast-react": "^0.3.0",
     "mocha": "^2.3.3",
+    "node-sass": "^3.4.2",
     "react": "^0.14.2",
     "react-addons-test-utils": "^0.14.2",
     "react-dom": "^0.14.2",

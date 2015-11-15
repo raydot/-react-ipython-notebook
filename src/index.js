@@ -13,11 +13,7 @@ function renderCell (cell, i) {
     raw: RawCell
   }[cell.cell_type]
 
-  if (! Cell) {
-    return (
-      <Error message={`Unknown cell type ${cell.cell_type}`}/>
-    )
-  }
+  if (!Cell) return
 
   return (
     <Cell

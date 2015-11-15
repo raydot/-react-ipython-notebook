@@ -1,15 +1,19 @@
 'use strict'
 
 var React = require('react')
-var Remarkable = require('remarkable')
+var mdast = require('mdast')
+var reactRenderer = require('mdast-react')
 
-var md = new Remarkable()
+var MarkdownCell = (props) => {
+  var source = props.data.source.reduce((text, line) =>
+    (text + line.replace(/^(#{1,6})([^#\s])/,'$1 $2'))
+  ,'')
 
-var MarkdownCell = (props) => (
-  <div
-    className='ipynbCell--text'
-    dangerouslySetInnerHTML={{__html: md.render(props.data.source.join(''))}}
-  />
-)
+  return (
+    <div className='ipynbCell--text'>
+      {mdast().use(reactRenderer).process(source)}
+    </div>
+  )
+}
 
 module.exports = MarkdownCell

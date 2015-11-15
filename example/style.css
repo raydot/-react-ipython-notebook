@@ -1,0 +1,131 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+body {
+  font-family: "Open sans",verdana,arial,sans-serif;
+  color: #1e4a7b; }
+
+a {
+  color: #265cc3; }
+
+a:visited,
+a:hover {
+  color: #1d3b84; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  letter-spacing: -0.25px;
+  color: #0089fe; }
+
+.ipynb {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  bottom: 0;
+  padding: 15px;
+  box-sizing: border-box;
+  overflow: auto; }
+
+form label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: block;
+  height: 50px;
+  line-height: 50px; }
+
+form {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  bottom: 0;
+  padding: 15px;
+  box-sizing: border-box; }
+
+form textarea {
+  font-family: monospace;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 100%;
+  bottom: 0;
+  box-sizing: border-box; }
+
+.ipynbInput {
+  page-break-inside: avoid;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; }
+
+.ipynbOutput-prompt,
+.ipynbInput-prompt {
+  min-width: 14ex;
+  padding: .4em;
+  margin: 0;
+  font-family: monospace;
+  text-align: right;
+  line-height: 1.21429em; }
+
+.ipynbInput-inner {
+  padding: 0.4em;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: vertical;
+  box-align: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  flex: 1; }
+
+.ipynbOutput-inner pre,
+.ipynbInput-inner pre {
+  margin: 0; }
+
+.ipynbOutput {
+  padding: 0.4em;
+  page-break-inside: avoid;
+  display: -webkit-box;
+  -webkit-box-orient: horizontal;
+  -webkit-box-align: stretch;
+  display: -moz-box;
+  -moz-box-orient: horizontal;
+  -moz-box-align: stretch;
+  display: box;
+  box-orient: horizontal;
+  box-align: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch; }
+
+.ipynbOutput-inner {
+  overflow-x: auto;
+  padding: .4em;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  flex: 1;
+  max-width: calc(100% - 14ex); }
+

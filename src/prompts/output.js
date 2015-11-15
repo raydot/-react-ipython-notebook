@@ -3,7 +3,7 @@
 var React = require('react')
 
 var OutputPrompt = (props) => (
-  <div className='ipynbOutputPrompt'>
+  <div className='ipynbOutput-prompt'>
     {`Out [${props.execution_count || ' '}]:`}
   </div>
 )
