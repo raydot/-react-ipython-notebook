@@ -4,11 +4,13 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import IPythonNotebook from '../../../src'
 
+import data from './data'
+
 class App extends React.Component {
   constructor (props) {
     super(props)
     this.createFileReader()
-    this.state = {data: ''}
+    this.state = {data: JSON.stringify(data)}
   }
 
   createFileReader () {
