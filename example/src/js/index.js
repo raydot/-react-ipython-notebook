@@ -1,6 +1,8 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var IPythonNotebook = require('../../lib')
+'use strict'
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+import IPythonNotebook from '../../../src'
 
 class App extends React.Component {
   constructor (props) {
