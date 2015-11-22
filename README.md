@@ -53,6 +53,10 @@ The output (beautified and with react tags removed) is:
 - Separate nbconvert into separate repo (i.e. avoid unnecessary dependencies in this repo)
 - And more
 
+## Example
+
+To see it in action, run `$ npm start` , go to [http://localhost:8080](http://localhost:8080), and drag an ipynb file onto the "Choose file" button.
+
 ## Buiding
 
 There are a three different build processes going on, depending on the target. To build everything, just run
