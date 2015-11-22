@@ -1,7 +1,5 @@
 'use strict';
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
 var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
@@ -18,10 +16,12 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDomServer = require('react-dom/server');
+var _server = require('react-dom/server');
 
-var _reactDomServer2 = _interopRequireDefault(_reactDomServer);
+var _server2 = _interopRequireDefault(_server);
 
-var input = JSON.parse(_fs2['default'].readFileSync(_process2['default'].argv[2]));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log(_reactDomServer2['default'].renderToString(_react2['default'].createElement(_lib2['default'], { data: input })));
+var input = JSON.parse(_fs2.default.readFileSync(_process2.default.argv[2]));
+
+console.log(_server2.default.renderToString(_react2.default.createElement(_lib2.default, { data: input })));

@@ -29734,9 +29734,9 @@ var _output2 = _interopRequireDefault(_output);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-//import Highlight from 'react-highlight'
+// import Highlight from 'react-highlight'
 
-//<Highlight key={`output-${i}`} className="python">{(o.data['text/plain'] || []).join('')}</Highlight>
+// <Highlight key={`output-${i}`} className="python">{(o.data['text/plain'] || []).join('')}</Highlight>
 
 var CodeCell = function CodeCell(props) {
   return _react2.default.createElement(
@@ -29786,22 +29786,7 @@ var CodeCell = function CodeCell(props) {
 
 module.exports = CodeCell;
 
-},{"../prompts/input":198,"../prompts/output":199,"react":192}],194:[function(require,module,exports){
-'use strict';
-
-var React = require('react');
-
-var ErrorCell = function ErrorCell(props) {
-  return React.createElement(
-    'div',
-    { className: 'ipynbCell--error' },
-    undefined.props.message
-  );
-};
-
-module.exports = ErrorCell;
-
-},{"react":192}],195:[function(require,module,exports){
+},{"../prompts/input":197,"../prompts/output":198,"react":192}],194:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29822,7 +29807,7 @@ var MarkdownCell = function MarkdownCell(props) {
 
 module.exports = MarkdownCell;
 
-},{"mdast":11,"mdast-react":6,"react":192}],196:[function(require,module,exports){
+},{"mdast":11,"mdast-react":6,"react":192}],195:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29833,7 +29818,7 @@ var RawCell = function RawCell(props) {
 
 module.exports = RawCell;
 
-},{"react":192}],197:[function(require,module,exports){
+},{"react":192}],196:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29843,7 +29828,7 @@ var React = require('react');
 var MarkdownCell = require('./cells/markdown');
 var CodeCell = require('./cells/code');
 var RawCell = require('./cells/raw');
-var ErrorCell = require('./cells/error');
+// var ErrorCell = require('./cells/error')
 
 function renderCell(cell, i) {
   var Cell = ({
@@ -29870,7 +29855,7 @@ var IPythonNotebook = function IPythonNotebook(props) {
 
 exports.default = IPythonNotebook;
 
-},{"./cells/code":193,"./cells/error":194,"./cells/markdown":195,"./cells/raw":196,"react":192}],198:[function(require,module,exports){
+},{"./cells/code":193,"./cells/markdown":194,"./cells/raw":195,"react":192}],197:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29885,7 +29870,7 @@ var InputPrompt = function InputPrompt(props) {
 
 module.exports = InputPrompt;
 
-},{"react":192}],199:[function(require,module,exports){
+},{"react":192}],198:[function(require,module,exports){
 'use strict';
 
 var React = require('react');
@@ -29900,4 +29885,4 @@ var OutputPrompt = function OutputPrompt(props) {
 
 module.exports = OutputPrompt;
 
-},{"react":192}]},{},[197]);
+},{"react":192}]},{},[196]);

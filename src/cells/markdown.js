@@ -6,8 +6,8 @@ var reactRenderer = require('mdast-react')
 
 var MarkdownCell = (props) => {
   var source = props.data.source.reduce((text, line) =>
-    (text + line.replace(/^(#{1,6})([^#\s])/,'$1 $2'))
-  ,'')
+    (text + line.replace(/^(#{1,6})([^#\s])/, '$1 $2'))
+  , '')
 
   return (
     <div className='ipynbCell--text'>

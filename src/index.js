@@ -4,7 +4,7 @@ var React = require('react')
 var MarkdownCell = require('./cells/markdown')
 var CodeCell = require('./cells/code')
 var RawCell = require('./cells/raw')
-var ErrorCell = require('./cells/error')
+// var ErrorCell = require('./cells/error')
 
 function renderCell (cell, i) {
   var Cell = {
