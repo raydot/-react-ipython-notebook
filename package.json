@@ -12,13 +12,8 @@
     "watch-notify-lint": "nodemon --exec \"npm run notify-lint\"",
     "bundle": "browserify -t [ babelify --presets [ react es2015 ] ] src/index.js -o dist/bundle.js",
     "uglify": "uglifyjs  --compress --mangle -- dist/bundle.js > dist/bundle.min.js",
-    "babel": "babel --presets es2015,react src/ --out-dir lib",
-    "babel-bin": "babel --presets es2015,react bin/*.js --out-dir dist/",
-    "build-example": "browserify -t [ babelify --presets [ react es2015 ] ] example/src/index.js -o example/bundle.js",
-    "build": "npm run bundle && npm run uglify && npm run babel && npm run babel-bin && npm run build-example",
-    "start": "python -m SimpleHTTPServer",
-    "sass": "./node_modules/.bin/node-sass example/style.scss > example/style.css",
-    "clean": "rm -rf dist/* lib/*"
+    "start": "./node_modules/.bin/webpack-dev-server --config example/webpack.config.js --content-base example/",
+    "build-example": "./node_modules/.bin/webpack --config example/webpack.config.js"
   },
   "repository": {
     "type": "git",

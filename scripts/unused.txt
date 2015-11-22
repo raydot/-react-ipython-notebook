@@ -1,0 +1,6 @@
+"babel": "babel --presets es2015,react src/ --out-dir lib",
+"babel-bin": "babel --presets es2015,react bin/*.js --out-dir dist/",
+"build-example": "browserify -t [ babelify --presets [ react es2015 ] ] example/src/index.js -o example/bundle.js",
+"build": "npm run bundle && npm run uglify && npm run babel && npm run babel-bin && npm run build-example",
+"sass": "./node_modules/.bin/node-sass example/style.scss > example/style.css",
+"clean": "rm -rf dist/* lib/*"
