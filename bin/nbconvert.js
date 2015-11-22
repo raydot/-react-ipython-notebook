@@ -1,11 +1,30 @@
-'use strict'
+#!/usr/bin/env node
 
-import fs from 'fs'
-import process from 'process'
-import IPythonNotebook from '../../lib'
-import React from 'react'
-import ReactDOMServer from 'react-dom/server'
+'use strict';
 
-var input = JSON.parse(fs.readFileSync(process.argv[2]))
+var _fs = require('fs');
 
-console.log(ReactDOMServer.renderToString(<IPythonNotebook data={input}/>))
+var _fs2 = _interopRequireDefault(_fs);
+
+var _process = require('process');
+
+var _process2 = _interopRequireDefault(_process);
+
+var _reactIpythonNotebook = require('react-ipython-notebook');
+
+var _reactIpythonNotebook2 = _interopRequireDefault(_reactIpythonNotebook);
+
+var _react = require('react');
+
+var _react2 = _interopRequireDefault(_react);
+
+var _server = require('react-dom/server');
+
+var _server2 = _interopRequireDefault(_server);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var input = JSON.parse(_fs2.default.readFileSync(_process2.default.argv[2]));
+
+console.log(_server2.default.renderToString(_react2.default.createElement(_reactIpythonNotebook2.default, { data: input })));
+

@@ -11,12 +11,15 @@
     "notify-lint": "./scripts/notify-lint.sh",
     "bundle": "browserify --standalone IPythonNotebook -t [ babelify --presets [ react es2015 ] ] src/index.js -o dist/bundle.js",
     "uglify": "uglifyjs  --compress --mangle -- dist/bundle.js > dist/bundle.min.js",
-    "build-bin": "babel --presets es2015,react bin/*.js --out-dir dist/",
+    "build-bin": "echo \"#!/usr/bin/env node\n\" > bin/nbconvert.js && babel --presets es2015,react src/bin/*.js >> bin/nbconvert.js && chmod +x bin/nbconvert.js",
     "build-lib": "babel --presets es2015,react src/ --out-dir lib",
     "build-dist": "npm run bundle && npm run uglify",
     "build-example": "./node_modules/.bin/webpack -p --config example/webpack.config.js",
     "build": "npm run build-bin && npm run build-lib && npm run build-example",
     "start": "./node_modules/.bin/webpack-dev-server --config example/webpack.config.js --content-base example/"
+  },
+  "bin": {
+    "nbconvert": "bin/nbconvert.js"
   },
   "repository": {
     "type": "git",

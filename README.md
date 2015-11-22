@@ -55,7 +55,11 @@ The output (beautified and with react tags removed) is:
 
 ## Buiding
 
-There are a three different build processes going on, depending on the target.
+There are a three different build processes going on, depending on the target. To build everything, just run
+
+```bash
+$ npm run build
+```
 
 #### Building `lib/`
 
@@ -88,8 +92,6 @@ A standalone command-line verison can be compiled with
 $ npm run build-bin
 $ node dist/bin/nbconvert.js /path/to/notebook.ipynb
 ```
-
-
 
 ## Testing
 
