@@ -53,6 +53,43 @@ The output (beautified and with react tags removed) is:
 - Separate nbconvert into separate repo (i.e. avoid unnecessary dependencies in this repo)
 - And more
 
+## Buiding
+
+There are a three different build processes going on, depending on the target.
+
+#### Building `lib/`
+
+`src/` is all ES6, so `lib/` contains a babel-transpiled version. Build with:
+
+```bash
+$ npm install -g babel-cli
+$ npm run build-lib
+```
+
+#### Building the example
+
+The example can either be served locally via `webpack-dev-server` with
+
+```bash
+$ npm run start
+```
+
+or built for distribution (todo: working example on gh-pages?) with
+
+```bash
+$ npm run build-example
+```
+
+#### Building `nbconvert`
+
+A standalone command-line verison can be compiled with
+
+```bash
+$ npm run build-bin
+$ node dist/bin/nbconvert.js /path/to/notebook.ipynb
+```
+
+
 
 ## Testing
 
