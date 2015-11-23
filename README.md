@@ -57,7 +57,7 @@ The output (beautified and with react tags removed) is:
 
 To see it in action, run `$ npm start` , go to [http://localhost:8080](http://localhost:8080), and drag an ipynb file onto the "Choose file" button.
 
-## Buiding
+## Building
 
 There are a three different build processes going on, depending on the target. To build everything, just run
 
