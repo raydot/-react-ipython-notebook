@@ -31,4 +31,8 @@ var CodeCell = (props) => (
   </div>
 )
 
+CodeCell.propTypes = {
+  data: React.PropTypes.object
+}
+
 module.exports = CodeCell

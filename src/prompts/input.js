@@ -8,4 +8,8 @@ var InputPrompt = (props) => (
   </div>
 )
 
+InputPrompt.propTypes = {
+  execution_count: React.PropTypes.number
+}
+
 module.exports = InputPrompt

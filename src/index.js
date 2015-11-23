@@ -27,4 +27,8 @@ var IPythonNotebook = (props) => (
   <div className='ipynb'>{props.data.cells.map(renderCell)}</div>
 )
 
+IPythonNotebook.propTypes = {
+  data: React.PropTypes.object
+}
+
 export default IPythonNotebook

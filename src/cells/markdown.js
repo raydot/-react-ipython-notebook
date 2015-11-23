@@ -16,4 +16,8 @@ var MarkdownCell = (props) => {
   )
 }
 
+MarkdownCell.propTypes = {
+  data: React.PropTypes.object
+}
+
 module.exports = MarkdownCell

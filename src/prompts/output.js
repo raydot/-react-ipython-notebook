@@ -8,4 +8,8 @@ var OutputPrompt = (props) => (
   </div>
 )
 
+OutputPrompt.propTypes = {
+  execution_count: React.PropTypes.number
+}
+
 module.exports = OutputPrompt
