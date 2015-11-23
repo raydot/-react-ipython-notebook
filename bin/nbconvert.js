@@ -22,9 +22,17 @@ var _reactIpythonNotebook = require('react-ipython-notebook');
 
 var _reactIpythonNotebook2 = _interopRequireDefault(_reactIpythonNotebook);
 
+var _victorica = require('victorica');
+
+var _victorica2 = _interopRequireDefault(_victorica);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var input = JSON.parse(_fs2.default.readFileSync(_process2.default.argv[2]));
 
-console.log(_server2.default.renderToStaticMarkup(_react2.default.createElement(_reactIpythonNotebook2.default, { data: input })));
+var output = _server2.default.renderToStaticMarkup(_react2.default.createElement(_reactIpythonNotebook2.default, { data: input }));
+
+var beautifiedOutput = (0, _victorica2.default)(output);
+
+_process2.default.stdout.write(beautifiedOutput);
 
