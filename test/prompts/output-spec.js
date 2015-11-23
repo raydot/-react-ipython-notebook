@@ -15,9 +15,9 @@ describe('OutputPrompt', () => {
     assert.equal(output.type, <div/>.type)
   })
 
-  it('has class "ipynbOutputPrompt"', () => {
+  it('has class "ipynbOutput-prompt"', () => {
     output = render(<OutputPrompt/>)
-    assert.match(output.props.className, /\bipynbOutputPrompt\b/)
+    assert.match(output.props.className, /\bipynbOutput-prompt\b/)
   })
 
   it('has children "Out [##]:"', () => {

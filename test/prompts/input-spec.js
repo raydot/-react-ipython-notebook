@@ -15,9 +15,9 @@ describe('InputPrompt', () => {
     assert.equal(output.type, <div/>.type)
   })
 
-  it('has class "ipynbInputPrompt"', () => {
+  it('has class "ipynbInput-prompt"', () => {
     output = render(<InputPrompt/>)
-    assert.match(output.props.className, /\bipynbInputPrompt\b/)
+    assert.match(output.props.className, /\bipynbInput-prompt\b/)
   })
 
   it('has children "In [##]:"', () => {
