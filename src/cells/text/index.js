@@ -4,20 +4,21 @@ var React = require('react')
 var mdast = require('mdast')
 var reactRenderer = require('mdast-react')
 
-var MarkdownCell = (props) => {
+var TextCell = (props) => {
   var source = props.data.source.reduce((text, line) =>
     (text + line.replace(/^(#{1,6})([^#\s])/, '$1 $2'))
   , '')
 
   return (
-    <div className='ipynbCell--text'>
-      {mdast().use(reactRenderer).process(source)}
+    <div className='cell text_cell'>
+      <div className='prompt input_prompt'/>
+      <div className='inner_cell'>{mdast().use(reactRenderer).process(source)}</div>
     </div>
   )
 }
 
-MarkdownCell.propTypes = {
+TextCell.propTypes = {
   data: React.PropTypes.object
 }
 
-module.exports = MarkdownCell
+module.exports = TextCell

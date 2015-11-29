@@ -1,26 +1,28 @@
 'use strict'
 
 var React = require('react')
-var MarkdownCell = require('./cells/markdown')
+var TextCell = require('./cells/text')
 var CodeCell = require('./cells/code')
-var RawCell = require('./cells/raw')
-// var ErrorCell = require('./cells/error')
+// var RawCell = require('./cells/raw')
+var ErrorCell = require('./cells/error')
 
 function renderCell (cell, i) {
   var Cell = {
-    markdown: MarkdownCell,
-    code: CodeCell,
-    raw: RawCell
+    markdown: TextCell,
+    code: CodeCell
+    // raw: RawCell
   }[cell.cell_type]
 
-  if (!Cell) return
-
-  return (
-    <Cell
-      data={cell}
-      key={`ipnyb-cell-${i + 1}`}
-    />
-  )
+  if (!Cell) {
+    return <ErrorCell message={`Cell type not recognized: "${cell.cell_type}"`}/>
+  } else {
+    return (
+      <Cell
+        data={cell}
+        key={`ipnyb-cell-${i + 1}`}
+      />
+    )
+  }
 }
 
 var IPythonNotebook = (props) => (

@@ -3,8 +3,8 @@
 var React = require('react')
 
 var ErrorCell = (props) => (
-  <div className='ipynbCell--error'>
-    {this.props.message}
+  <div className='cell error_cell'>
+    {props.message}
   </div>
 )
 

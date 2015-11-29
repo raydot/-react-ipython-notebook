@@ -3,7 +3,7 @@
 var React = require('react')
 
 var RawCell = (props) => (
-  <div className='ipynbCell--raw'>
+  <div className='cell raw_cell'>
   </div>
 )
 
